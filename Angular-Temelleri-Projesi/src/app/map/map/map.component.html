@@ -1,0 +1,37 @@
+<div class="row" style="margin: 2rem">
+  <div class="col-md-12" style="text-align: center">
+    <form class="form-group" #formAdi="ngForm" (ngSubmit)="kaydet(formAdi)">
+      <div class="row">
+        <div>
+          <label for="id">İd:</label>
+          <input type="number" name="id" ngModel />
+        </div>
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" name="name" ngModel />
+        </div>
+        <div>
+          <label for="region">Region:</label>
+          <input type="text" name="region" ngModel />
+        </div>
+        <div>
+          <label for="plaka">Plaka:</label>
+          <input type="number" name="plaka" ngModel />
+        </div>
+      </div>
+      <button type="submit">Kaydet</button>
+    </form>
+  </div>
+
+
+  
+  <div class="col-md-4">
+    <app-city></app-city>
+  </div>
+  <div class="col-md-4">
+    <app-plaka></app-plaka>
+  </div>
+  <div class="col-md-4">
+    <app-region></app-region>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="d-flex justify-content-center">
+  <h3>Angular Directives</h3>
+</div>
+
+<h5>Structural Directives</h5>
+<div class="row">
+  <div class="col-md-4">
+    <h4>--*ngIf--</h4>
+    <input type="text" [(ngModel)]="name" />
+    <p *ngIf="name === 'akif'">Akif ismi girildi!!!</p>
+    <br />
+    <p *ngIf="title">Title var!!!</p>
+    <button (click)="changeTitle()">tıkla</button> 
+    <br />
+    <p *ngIf="title; then titleYes; else titleNo"></p>
+    <ng-template #titleYes>Title var Tamplate</ng-template>
+    <ng-template #titleNo>Title yok Tamplate</ng-template>
+  </div>
+  <div class="col-md-3">
+    <h4>--ngSwitch--</h4>
+    <input type="text" [(ngModel)]="username" >
+    <br>
+    <ul [ngSwitch]="username">
+        <li *ngSwitchCase="'Ceyhun'" >Merheba Ceyhun</li>
+        <li *ngSwitchCase="'Akif'" >Merheba Akif</li>
+        <li *ngSwitchDefault >Merhaba Hello</li> <!--ne olursa olsun bu gösterilecek deemektir -->
+    </ul>
+  </div>
+  <div class="col-md-3">
+      <h4>--*ngFor--</h4>
+      <ul>
+          <li *ngFor= "let sehir of sehirler; let i=index" >
+            {{i}},  id: {{sehir.id}} name:{{sehir.name}},region:{{sehir.region}}
+          </li>
+      </ul>
+  </div>
+  <div class="col-md-3">
+    <h4>--ngClass--</h4>
+    <ul>
+        <input type="text" [(ngModel)]="renk"> <br>
+        <p [ngClass]= "renk==='red'?'red':'blue'" >Şu an cümle bu renk oldu!!! </p> <br>
+        <p [ngClass]="{
+            red:renk==='red',
+            blue:renk==='blue'
+        }">
+        Yeni Renk
+        </p>
+    </ul>
+</div>
+<div class="col-md-3">
+    <h4>--ngStyle--</h4>
+    <input type="text" [(ngModel)]="renk">
+    <p [ngStyle]= "{color:renk}" >Renk Değeri:{{renk}}</p>
+    <p [ngStyle]= "{color:renk==='akifff'?'orange':'pink'}" >Yeni Renk Değeri</p>
+</div>
+<div class="col-md-4">
+    <h4>--ngStyle--</h4>
+    <p appHighlight>Highlight Directive WWWWZ</p>
+    <p appHighlight [highlightColor]= "'yellow'">Highlight Directive WWWWZzzZZzzVVV</p>
+    <p appHighlight highlightColor = "orange">Highlight Directive WWWWZzzZZzzVVV</p>
+    
+</div>
+</div>

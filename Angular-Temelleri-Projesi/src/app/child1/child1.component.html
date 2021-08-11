@@ -1,0 +1,13 @@
+
+<br>
+<p>child1 companent</p>
+gelen sonuc: {{data| json}} <br>
+
+
+<div *ngIf="data">{{data?.name}} kişisi
+    <p *ngIf="data?.status==='true'">başarılı</p>
+    <p *ngIf="data?.status==='false'">başarısız</p>
+</div>
+
+<!-- <button (click)= "enitForm('event')">reset1</button><br><br> 1.YOL -->
+<button (click)= "resetForm.emit(data.name)">reset2</button>

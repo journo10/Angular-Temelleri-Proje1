@@ -1,0 +1,28 @@
+<div style="margin: 2rem;">
+<div class="row">
+  <div class="col-md-2">
+    <input type="text" [(ngModel)]="name" />
+    <button (click)="setItem(name)">setİtem</button>
+    <button (click)="getItem()">getİtem</button>
+    <button (click)="(clearItem)">clearİtem</button>
+    <!--şimdilik clearAll ile aynı işi yaptığı için clear yazmadım -->
+    <p>ngModel:{{ name }}</p>
+    <p>local Storage:{{ localStorageVal }}</p>
+
+    <div class="col-md-2">
+        name:<input type="text" [(ngModel)]="objName" />
+        surname:<input type="text" [(ngModel)]="objSurname" />
+        age:<input type="text" [(ngModel)]="objAge" />
+        <button (click)="setObject()">setObject</button>
+        <button (click)="getObect()">getObject</button>
+        <p>obj value:{{  localStorageObjVal }}</p>
+      </div>
+  </div>
+  </div>
+  <div>
+  <a [routerLink]="['../cookie']" >cookie sayfasına git</a>
+</div>
+  </div>
+
+
+

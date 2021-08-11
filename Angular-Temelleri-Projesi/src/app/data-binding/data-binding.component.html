@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3>
+      One Way Binding
+      <span style="font-size: medium">(Component'ten DOM'a)</span>
+    </h3>
+    <div class="row">
+      <div class="col-md-2">
+        <h4>Intarpolation</h4>
+        <p>Ad:{{ user.name }} Soyad:{{ user.surname }}</p>
+        <p>Hesaplama:{{ 2 + 5 }}</p>
+        <div>
+          <img height="120px" src="{{ user.imageUrl }}" alt="Ronaldo" />
+        </div>
+        <p>{{ user.hobi }}</p>
+      </div>
+      <div class="col-md-3">
+        <h4>Property Binding</h4>
+        <input [type]="type" [value]="user.job" />
+      </div>
+      <div class="col-md-3">
+        <h4>Attribute Binding</h4>
+        <input
+          [type]="type"
+          [value]="user.job"
+          [attr.disabled]="!user.isEditable ? 'disabled' : null"
+        />
+      </div>
+      <div class="col-md-2">
+        <h4>Class Binding</h4>
+        <p [class.red]="!user.isEditable ? true : false">Renk Değeri</p>
+      </div>
+      <div class="col-md-2">
+        <h4>Style Binding</h4>
+        <p [style.color]="!user.isEditable ? 'orange' : 'red'">Style Değeri</p>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <h3>
+        One Way Binding
+        <span style="font-size: medium">(DOM'dan Companent'e)</span>
+      </h3>
+      <div class="col-md-3">
+        <h4>Event Binding</h4>
+        <button (click)="clicked()">GÖNDER</button>
+        <input type="text" [value]="user.job" (keyup.enter)="submit($event)" />
+      </div>
+    </div>
+    <!-- <div class="col-md-12">
+      <h3>Two Way Binding</h3>
+      <div class="row">
+        <div class="col-md-3">
+          <h3>ngModel</h3>
+          <input type="text" [(ngModel)] ="user.name"/>
+      </div>
+      </div>
+    </div> -->
+  </div>
+</div>

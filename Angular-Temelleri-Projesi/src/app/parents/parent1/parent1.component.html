@@ -1,0 +1,45 @@
+<p>parent1 component</p>
+<div class="row">
+    <div class="col-md-4">
+        <input type="text" [(ngModel)]="name" ><br>
+        gelen data-binding sonuc:{{name}}<hr>
+    </div>
+    <div class="col-md-4">
+        başarı durumu:
+        <select [(ngModel)]="successStatus">
+            <option value="0">SEÇ</option>
+            <option value="true">BAŞARILI</option>
+            <option value="false">BAŞARISIZ</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <button (click)="calculate()" >Çalıştır</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <app-child1 [data]= " calculeterData" (resetForm)="resetParentForm('event')" ></app-child1>
+    </div>
+</div>
+<div class="row">
+<div class="col-md-3">
+    <button (click)="child1.alertSth()" >CHİLD COMPANENT TETİKLE</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-2">
+    <h4>Lowercase</h4>
+    <p>Lowercase hali:{{ title | lowercase }}</p>
+  </div>
+  <div class="col-md-2">
+    <h4>Titlecase</h4>
+    <p>Titlecase hali:{{ title | titlecase }}</p>
+  </div>
+  <div class="col-md-2">
+    <h4>Uppercase</h4>
+    <p>Uppercase hali:{{ title | uppercase }}</p>
+    <p>Uppercase İ hali durumu:{{ titleiharfiicin }}</p>
+  </div>
+  <div class="col-md-3">
+    <h4>Date pipe</h4>
+    <p>normal date:{{ today | date: "dd/MMM/yyyy" }}</p>
+    <p>{{ today | date: "medium" }}</p>
+  </div>
+  <div class="col-md-3">
+    <h4>Currency pipe</h4>
+    <p>normal hali:{{ parabirimi }}</p>
+    <p>currency hali:{{ parabirimi | currency }}</p>
+    <p>currency hali:{{ parabirimi | currency: "" }}</p>
+  </div>
+  <div class="col-md-3">
+    <h4>json pipe</h4>
+    <p>normal object hali:{{ objVal }}</p>
+    <p>json hali:{{ objVal | json }}</p>
+  </div>
+  <div class="col-md-3">
+    <h4>percent pipe</h4>
+    <p>%{{percentVal }}</p>
+    <p>normal object hali:{{percentVal }}</p>
+    <p>json hali: {{percentVal | percent }}</p>
+  </div>
+  <div class="col-md-3">
+    <h4>slice pipe</h4>
+    <p>normal hali:{{cityName }}</p>
+    <p>slice ve uppercase hali:{{ cityName|uppercase | slice:0:3}}</p>
+    <p>slice hali:{{ cityName|slice:0:3 }}</p>
+    <p>slice hali:{{ cityName|slice:-2 }}</p>
+    <p>slice hali:{{ cityName|slice:3 }}</p>
+    <p>slice hali:{{ cityName|slice:-4:-2 }}</p>
+  </div>
+  <div class="col-md-3">
+    <h4>custom pipe</h4>
+    <p>{{cash| tl }}</p> <!-- pipe.ts dosyasına bak -->
+    <br><br>
+    <h4>Cities</h4>
+    <ul>
+      <li *ngFor="let c of cities | myFiltering:'i'"> {{c}} </li>  
+    </ul> 
+  </div>
+</div>
